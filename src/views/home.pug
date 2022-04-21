@@ -1,0 +1,41 @@
+doctype html
+html(lang="en")
+    head
+        meta(charset="UTF-8")
+        meta(http-equiv="X-UA-Compatible", content="IE=edge")
+        meta(name="viewport", content="width=device-width, initial-scale=1.0")
+        link(rel="stylesheet", href="../public/css/style.css")
+        link(href="https://fonts.googleapis.com/css2?family=Raleway:wght@300&display=swap", rel="stylesheet")
+        link(rel="stylesheet", href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/css/all.min.css")
+        title Louis Video Chat
+
+    body 
+        main
+            div#welcomeContainer
+                h1#title LOUIS VIDEO CHAT
+                h3 Enter Nickname and Room name
+                form#welcomeForm
+                    div
+                        span Nickname: 
+                        input#nicknameInput(placeholder="nickname",required,type="text",maxlength="15")
+                    div   
+                        span Room: 
+                        input#roomInput(placeholder="Room Name", required, type="text")
+                        button#roomButton Enter Room
+            div#call  
+                 div#mainstream
+                   div#myside
+                        video#myFace(autoplay,playsinline,width='50%',height='50%')
+                        span#mynickname
+                   div#buttons
+                        button#mute <i class="fas fa-microphone-slash"></i>
+                        button#camera <i class="fas fa-video-slash"></i>
+                        select#cameras
+                   video#peerFace(autoplay,playsinline,width='400',height='400')
+                       
+                     
+                    
+                
+
+        script(src="/socket.io/socket.io.js") 
+        script(src="/public/js/app.js")
